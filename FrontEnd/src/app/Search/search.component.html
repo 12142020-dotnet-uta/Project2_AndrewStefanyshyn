@@ -1,0 +1,21 @@
+<span>
+    <form (ngSubmit)="search()">
+        <input type="text" placeholder="Search by lyrics" name="query" [(ngModel)]="query">
+        <button type="submit" class="btn btn-warning"> Search </button>
+    </form>
+</span>
+
+<div *ngIf="songSelected">
+    <button class="w3-button w3-black w3-display-left" (click)="getPrevBannerSong()">&#10094;</button>
+    <app-song-summary [song]="selectedSong"></app-song-summary>
+    <button class="w3-button w3-black w3-display-right" (click)="getNextBannerSong()">&#10095;</button>
+</div>
+
+<!-- We need this ngIf to prevent the component loading before songIn is initialized -->
+<div *ngIf="songIn.length  > 0">
+    <app-track-list [songIn]="songIn" (foundSongIndex)="displaySong($event)"></app-track-list>
+</div>
+<!--
+<button (click)="testGenius()"> Test Genius </button>
+<button (click)="testSpotify()"> Test Spotify </button>
+-->

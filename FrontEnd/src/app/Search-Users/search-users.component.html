@@ -1,0 +1,19 @@
+<span>
+    <form (ngSubmit)="search()">
+        <input type="text" placeholder="Search by username" name="query" [(ngModel)]="query">
+        <button type="submit" class="btn btn-warning"> Search </button>
+    </form> 
+</span>
+
+
+<!-- Don't display unless its been loaded -->
+<div *ngIf="users.length > 0">
+    <ul>
+        <li *ngFor="let u of users"> 
+            <span>
+                <span style="font: 24px;" (click)="displayProfile(u)"> {{u.userName}} </span>
+                <!-- Do we want a chat button her??? -->
+            </span>
+        </li>
+    </ul>
+</div>

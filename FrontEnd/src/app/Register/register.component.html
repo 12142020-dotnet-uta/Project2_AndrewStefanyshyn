@@ -1,0 +1,65 @@
+<div *ngIf="loginService.loggedIn; else elseBlock">
+	<h1> Log out first; You are already logged in </h1>
+</div>
+
+<ng-template #elseBlock>
+    <h1>Register</h1>
+
+    <form [formGroup]="formdata" #registrationForm="ngForm" (ngSubmit)="register(registrationForm.value)">
+        <!--
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" name="firstName" formControlName="firstName" required ngModel>
+            <div class="form-control-feedback" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                <p *ngIf="firstName.errors.required">First Name is required</p>
+            </div>
+        </div> 
+
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" name="lastName" formControlName="lastName" required ngModel>
+            <div class="form-control-feedback" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+                <p *ngIf="lastName.errors.required">Last Name is required</p>
+            </div>
+        </div> 
+    -->
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email" formControlName="email" required ngModel>
+            <div class="form-control-feedback" *ngIf="email.invalid && (email.dirty || email.touched)">
+                <p *ngIf="email.errors.email">Not a valid email</p>
+            </div>
+        </div> 
+    
+        <div class="form-group">
+            <label>Userame</label>
+            <input type="text" class="form-control" name="userName" formControlName="userName" required ngModel>
+            <div class="form-control-feedback" *ngIf="userName.invalid && (userName.dirty || userName.touched)">
+                <p *ngIf="userName.errors.required">userName is required</p>
+            </div>
+        </div> 
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password" formControlName="password" required ngModel>
+            <div class="form-control-feedback" *ngIf="password.invalid && (password.dirty || password.touched)">
+                <p *ngIf="password.errors.required">Password is required</p>
+            </div>
+        </div>
+	  	  
+        <div class="form-group">
+            <label>Retype Password</label>
+            <input type="password" class="form-control" name="rePassword" formControlName="rePassword" required ngModel>
+            <!-- Ask Ryan - IDK why we cant put these two divs in one -->
+            <div class="form-control-feedback" *ngIf="(rePassword.invalid) && (rePassword.dirty || rePassword.touched)">
+                <p *ngIf="rePassword.errors.required">Retype the password</p>
+            </div>
+            <div class="form-control-feedback" *ngIf="(formdata.errors?.rePassword) && (rePassword.dirty || rePassword.touched)">
+                <p>Password must match</p>
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="!formdata.valid" class="btn btn-warning">Register</button>
+
+    </form>
+</ng-template>

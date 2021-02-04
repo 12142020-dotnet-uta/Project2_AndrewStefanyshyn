@@ -1,0 +1,58 @@
+<div class="songDescription">    <!-- Not sure why the class isn't applying the color -->
+    <!-- We need this div to prevent the contents from loading before the song is fetched from the database.
+           It still works without it, but we get a console error -->
+    <div *ngIf="song">
+        <p style="color: black; min-height: 300px; font: 30px bold;">
+            <!--
+            <img width="300px" height="300px" src={{song.albumURL}} style="float: left;"/>
+            <iframe width="500px" height="300px" [src]='getYoutubeURL()' frameborder="0" style="float: right;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            -->
+
+            <!-- ngIf Soundcloud, ngElse Spotify -->
+            <span *ngIf="song.isOriginal; else elseblock">
+                <iframe width="500px" height="300px" scrolling="no" frameborder="no" allow="autoplay" style="float: right;" [src]="getURL()"></iframe>
+            </span>
+            <ng-template #elseblock>
+                <span *ngIf="song.urlPath; else elseblock2">
+                    <iframe [src]="getSpotifyURL()" style="float: right;" width="500px" height="300px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                </span>
+                <ng-template #elseblock2>
+                    <p style="color: green; min-height: 300px; font: 30px bold; float: right;"> Spotify doesn't have this song :( </p>
+                </ng-template>
+            </ng-template>
+
+            Title: {{song.title}}<br/>
+            
+            <span *ngIf="song.isOriginal; else notOriginal"> <a (click)="goToProfile()">Artist: {{song.artistName}}</a> </span>
+            <ng-template #notOriginal>Artist: {{song.artistName}}</ng-template>
+            
+            <!-- Artist: {{song.artistName}} -->
+            <span *ngIf="song.album && song.album.length > 0"><br/>Album: {{song.album}}</span>
+            <!-- <span *ngIf="song.genre && song.genre.length > 0"><br/>Genre: {{song.genre}}</span> -->
+            <span *ngIf="song.year && song.year > 0"><br/>Year: {{song.year}}</span><br/>
+            Plays: {{song.numberOfPlays}}<br/>
+            <span *ngIf="song.lyrics"><button class="btn btn-success" (click)="showLyrics()"> Lyrics </button></span>
+        </p>
+        <!-- Check if the song is already added -->
+        <div *ngIf="loginService.loggedIn && !isFavourite && !(song.artistName == loginService.loggedInUser.userName)">
+            <button class="btn btn-primary" (click)="addToFavourites()">Add to Favourites</button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="lyrics">
+    <div class="lyrics" style="white-space: pre-line">
+        <div *ngIf="song.isOriginal; else genius">
+            <p>{{song.lyrics}}</p>
+        </div>
+        <ng-template #genius>
+            <!--
+            <div id='rg_embed_link_110601' class='rg_embed_link' data-song-id='110601'>
+                Read <a [href]="getGeniusLyrics()">Lyrics</a> on Genius
+            </div> 
+            <script crossorigin src='//genius.com/songs/110601/embed.js'></script>
+            -->
+            Read <a [href]="getGeniusLyrics()">Lyrics</a> on Genius
+        </ng-template>
+    </div>
+</div>

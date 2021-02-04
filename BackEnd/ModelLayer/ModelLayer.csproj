@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <DebugType>Full</DebugType>
+    <ProjectGuid>{13981D59-E0F7-4D8B-8E1C-87E205D4ED5D}</ProjectGuid>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.2" />
+  </ItemGroup>
+
+</Project>

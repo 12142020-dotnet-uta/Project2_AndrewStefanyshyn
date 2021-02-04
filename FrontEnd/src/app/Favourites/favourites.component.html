@@ -1,0 +1,23 @@
+<h2> Favourites </h2>
+
+<div *ngIf="songIn.length > 0; else elseblock">
+    <div *ngIf="songSelected">
+        <button class="w3-button w3-black w3-display-left" (click)="getPrevBannerSong()">&#10094;</button>
+        <app-song-summary [song]="selectedSong"></app-song-summary>
+        <button class="w3-button w3-black w3-display-right" (click)="getNextBannerSong()">&#10095;</button>
+    </div>
+
+    <!-- We need this ngIf to prevent the component loading before songIn is initialized -->
+    <div *ngIf="songIn.length > 0">
+        <div *ngIf="homeUser; else else2">
+            <app-track-list [songIn]="songIn" (foundSongIndex)="displaySong($event)"  [deletable]="homeUser" (deleteIndex)="delete($event)"></app-track-list>
+        </div>
+        <ng-template #else2>
+            <app-track-list [songIn]="songIn" (foundSongIndex)="displaySong($event)"></app-track-list>
+        </ng-template>
+    </div>
+</div>
+
+<ng-template #elseblock>
+    <h6> This user has no favourites </h6>
+</ng-template>

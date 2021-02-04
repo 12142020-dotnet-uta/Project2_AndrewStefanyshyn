@@ -1,0 +1,11 @@
+<h2> Chat </h2>
+
+<div class="host">
+
+</div>
+
+<!-- Stick to bottom! -->
+<form [formGroup]="formdata" #message="ngForm" (ngSubmit)="sendMessage(message.value)">
+    <input type="textbox" placeholder="Type a message" name="message" formControlName="message" required ngModel>
+    <button type="submit" class="btn btn-primary"> Send </button>
+</form>

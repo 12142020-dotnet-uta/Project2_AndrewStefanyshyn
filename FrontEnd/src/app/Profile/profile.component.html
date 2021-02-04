@@ -1,0 +1,75 @@
+<div *ngIf="homeUser; else elseBlock">
+    <h1> Welcome, {{loginService.loggedInUser.userName}}</h1>
+    <h4> This is your profile </h4>
+    <p> {{user.firstName}} {{user.lastName}} </p>
+    <p> {{user.description}} </p>
+    <button class="btn btn-primary" (click)="goToEdit()"> Edit </button><br/><br/>
+
+    <!-- Ask Ryan if he can make this into a sidebar navigation menu (or maybe not so we can take up space) -->
+    <button routerLink="/friends" routerLinkActive="active" class="btn btn-warning"> My Friends </button> <br/>
+    <button class="btn btn-warning" (click)="goToFavourites()"> My Favourites </button> <br/>
+    <!-- <button class="btn btn-warning"> My Playlists </button> <br/> -->
+    <button class="btn btn-warning" (click)="goToOriginalMusic()"> My Music </button> <br/>
+
+        
+    <h4 style="margin: 40px;"> My Top 5 </h4>
+</div>
+
+<ng-template #elseBlock>
+    <h1> {{user.userName}}'s Profile </h1>
+    <p> {{user.description}} </p>
+
+    <!-- Check if he is a friend. Then we can make it Remove from friends -->
+    <div *ngIf="loginService.loggedIn">
+        <div *ngIf="!isFriend; else elseBlockFriend">
+            <button class="btn btn-primary" (click)="makeFriend()"> Add to Friends </button>
+        </div>
+        <ng-template #elseBlockFriend>
+            <button class="btn btn-danger" (click)="removeFriend()"> Remove from Friends </button>
+        </ng-template>
+    </div>
+
+    <!-- How much of this should be visible? -->
+    <!--
+    <button routerLink="/friends" routerLinkActive="active" class="btn btn-warning"> {{user.userName}}'s Friends </button> <br/>
+    <button class="btn btn-warning"> {{user.userName}}'s Playlists </button> <br/>
+    -->
+    <button class="btn btn-warning" (click)="goToChat()"> Chat </button> <br/>
+    <button class="btn btn-warning" (click)="goToFavourites()"> {{user.userName}}'s Favourites </button> <br/>
+    <button class="btn btn-warning" (click)="goToOriginalMusic()"> {{user.userName}}'s Music </button> <br/>
+
+        
+    <h4 style="margin: 40px;"> {{user.userName}}'s Top 5 </h4>
+</ng-template>
+
+<div *ngIf="songIn.length > 0; else elseblock">
+    <div *ngIf="songSelected">
+        <button class="w3-button w3-black w3-display-left" (click)="getPrevBannerSong()">&#10094;</button>
+        <app-song-summary [song]="selectedSong"></app-song-summary>
+        <button class="w3-button w3-black w3-display-right" (click)="getNextBannerSong()">&#10095;</button>
+    </div>
+
+    <!-- We need this ngIf to prevent the component loading before songIn is initialized -->
+    <div *ngIf="songIn.length > 0">
+        <app-track-list [songIn]="songIn" (foundSongIndex)="displaySong($event)"></app-track-list>
+    </div>
+
+    <div style="text-align:center;">
+        <button routerLink="/" routerLinkActive="active" class="btn btn-warning"> Home </button>
+    </div>
+</div>
+
+
+<ng-template #elseblock>
+    <h6> This user has no favourites </h6>
+</ng-template>
+
+<!--    Our route guard should prevent this code from being reached
+<ng-template #elseBlock>
+    <h1>You are logged out</h1>
+    <div style="text-align:center;">
+        <button routerLink="/registration" routerLinkActive="active" class="btn btn-warning"> Register </button>
+        <button routerLink="/login" routerLinkActive="active" class="btn btn-warning"> Log In </button>
+    </div>
+</ng-template>
+-->

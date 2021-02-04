@@ -1,0 +1,27 @@
+<div>
+    <h1>Edit Profile</h1>
+
+    <form [formGroup]="formdataDescription" #updateDescriptionForm="ngForm" (ngSubmit)="updateDescription(updateDescriptionForm.value)">
+        <div class="form-group">
+            <label>Description</label>
+            <input type="text" class="form-control" name="description" formControlName="description" placeholder={{user.description}} required ngModel>
+            <button type="submit" class="btn btn-warning">Update</button>
+        </div>
+    </form>
+
+    <form [formGroup]="formdataFirstName" #updateFNameForm="ngForm" (ngSubmit)="updateFName(updateFNameForm.value)">
+        <div class="form-group">
+            <label>firstName</label>
+            <input type="text" class="form-control" name="firstName" formControlName="firstName" placeholder={{user.firstName}} required ngModel>
+            <button type="submit" class="btn btn-warning">Update</button>
+        </div>
+    </form>
+
+    <form [formGroup]="formdataLastName" #updateLNameForm="ngForm" (ngSubmit)="updateLName(updateLNameForm.value)">
+        <div class="form-group">
+            <label>lastName</label>
+            <input type="text" class="form-control" name="lastName" formControlName="lastName" placeholder={{user.lastName}} required ngModel>
+            <button type="submit" class="btn btn-warning">Update</button>
+        </div>
+    </form>
+</div>

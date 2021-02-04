@@ -1,0 +1,50 @@
+<div>
+    <h1>Upload a Song</h1>
+
+    <form [formGroup]="formdata" #uploadForm="ngForm" (ngSubmit)="upload(uploadForm.value)">
+
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" name="title" formControlName="title" required ngModel>        
+            <div class="form-control-feedback" *ngIf="title.invalid && (title.dirty || title.touched)">
+                <p *ngIf="title.errors.required">Title is required</p>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Album</label>
+            <input type="text" class="form-control" name="album" formControlName="album" required ngModel>        
+            <div class="form-control-feedback" *ngIf="album.invalid && (album.dirty || album.touched)">
+                <p *ngIf="album.errors.required">Album is required</p>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Genre</label>
+            <input type="text" class="form-control" name="genre" formControlName="genre" required ngModel>        
+            <div class="form-control-feedback" *ngIf="genre.invalid && (genre.dirty || genre.touched)">
+                <p *ngIf="genre.errors.required">Genre is required</p>
+            </div>
+        </div>
+        
+        <!-- STRETCH GOAL ADD VALIDATION TO MAKE SURE URL IS VALID -->
+        <div class="form-group">
+            <label>Sound Cloud URL</label>
+            <input type="text" class="form-control" name="urlPath" formControlName="urlPath" required ngModel>        
+            <div class="form-control-feedback" *ngIf="urlPath.invalid && (urlPath.dirty || urlPath.touched)">
+                <p *ngIf="urlPath.errors.required">A Url is required</p>
+            </div>
+        </div>   
+        
+        <!-- ASK RYAN this should be a huge box you can type in and have multiple lines
+                as it is now, all /n are converted to spaces upon a copy paste
+                and enter just submits the form-->
+        <div class="form-group">
+            <label>Lyrics</label>
+            <input type="textbox" class="form-control" name="lyrics" formControlName="lyrics" required ngModel>
+        </div>   
+
+        <button type="submit" [disabled]="!formdata.valid" class="btn btn-warning">Upload</button>
+
+    </form>
+</div>

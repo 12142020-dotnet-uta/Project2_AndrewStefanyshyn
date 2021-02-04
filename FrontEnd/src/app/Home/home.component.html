@@ -1,0 +1,52 @@
+<div *ngIf="loginService.loggedIn; else elseBlock">
+	<h1> Welcome, {{loginService.loggedInUser.userName}}</h1>
+    <h4> You are logged in </h4>
+
+    <div style="text-align:center;">
+        <button routerLink="/profile" routerLinkActive="active" class="btn btn-warning"> My Profile </button>
+    </div>
+</div>
+
+<ng-template #elseBlock>
+    <h4>You are logged out</h4>
+    <div style="text-align:center;">
+        <button routerLink="/registration" routerLinkActive="active" class="btn btn-warning"> Register </button>
+        <button routerLink="/login" routerLinkActive="active" class="btn btn-warning"> Log In </button>
+    </div>
+</ng-template>
+
+<button (click)="test()"> TEST </button>
+
+<div style="text-align: center;">
+    <button class="btn btn-success" (click)="testSpotify2()"> Spotify Login </button>
+</div>
+
+
+<span>
+    <form (ngSubmit)="search()">
+        <input type="text" placeholder="Search original songs by lyrics" name="query" [(ngModel)]="query">
+        <button type="submit" class="btn btn-warning"> Search </button>
+    </form>
+</span>
+
+<span>
+    <form (ngSubmit)="userSearch()">
+        <input type="text" placeholder="Search users" name="userquery" [(ngModel)]="userquery">
+        <button type="submit" class="btn btn-warning"> Search </button>
+    </form>
+</span>
+
+
+<h2 style="margin: 40px;"> Best Songs Ever </h2>
+
+
+<span *ngIf="selectedSong">
+    <button class="w3-button w3-black w3-display-left" (click)="getPrevBannerSong()">&#10094;</button>
+    <app-song-summary [song]="selectedSong"></app-song-summary>
+    <button class="w3-button w3-black w3-display-right" (click)="getNextBannerSong()">&#10095;</button>
+</span>
+
+<!-- We need this ngIf to prevent the component loading before songIn is initialized -->
+<div *ngIf="songIn.length > 0">
+    <app-track-list [songIn]="songIn" (foundSongIndex)="displaySong($event)"></app-track-list>
+</div>

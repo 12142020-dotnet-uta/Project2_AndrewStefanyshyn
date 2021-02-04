@@ -1,0 +1,75 @@
+*{
+    color: #d4d4d4;
+}
+
+.lyrics{
+    background-color: #888800; 
+    width: 60%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    text-align: center;
+}
+
+.logo{
+    color: #ffffff;
+    font: 30px bold;
+}
+
+.songDescription{
+    background-color: #aaaa66;
+    color: #000000;
+    font-style: bold;
+    margin: 20px;
+}
+
+.oddRow{
+    background-color: #555555;
+}
+
+/* From Stack Overflow*/
+.table-hover > tr:hover {
+    background-color: #888888;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6{
+    text-align: center;
+    color: #66bbff;
+}
+
+body{
+    background-color: #444444;
+}
+
+header, footer{
+    background-color: #000000;
+}
+
+button{
+    margin: 5px;
+}
+
+a, a:hover{
+    color: yellow;
+}
+
+table{
+    border: 5px solid #dddddd;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th{
+    color: yellow;
+    font: 24px bold;
+    background-color: #222222;
+}
+
+td{
+    font: 18px;
+}

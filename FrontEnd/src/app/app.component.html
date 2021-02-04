@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Whats That Song??? </title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>   
+        <!-- Fix this. Do we make it a nav? -->
+        <div style="text-align: left;">
+            <a routerLink="/" routerLinkActive="active" class="logo"> Home </a>
+        </div>
+        
+        <div *ngIf="loginService.loggedIn" style="text-align:right;">
+            <button routerLink="/profile" routerLinkActive="active" class="btn btn-warning"> Profile </button>
+            <button routerLink="/" routerLinkActive="active" class="btn btn-warning" (click)="logout()"> Log Out </button>
+        </div>
+    </header>
+
+    <h1> Whats That Song??? </h1>
+    
+    <router-outlet></router-outlet>
+
+    <!-- Ask Ryan - Can't figure out how to make this stick at the bottom
+    <footer>Bye</footer>
+    -->
+</body>
+</html> 

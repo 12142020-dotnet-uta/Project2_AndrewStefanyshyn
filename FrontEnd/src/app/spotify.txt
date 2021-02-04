@@ -1,0 +1,28 @@
+Spotify:
+
+ID: c81d713ce2b3474d8bfad80c777ae5d5
+Secret:  14e824f314b941db8fea0b82f84ea536
+URL2: https%3A%2F%2Finharmony.azurewebsites.net
+
+https://accounts.spotify.com/authorize?client_id=c81d713ce2b3474d8bfad80c777ae5d5&response_type=code&redirect_uri=https%3A%2F%2Finharmony.azurewebsites.net
+
+
+c81d713ce2b3474d8bfad80c777ae5d5:14e824f314b941db8fea0b82f84ea536
+YzgxZDcxM2NlMmIzNDc0ZDhiZmFkODBjNzc3YWU1ZDU6MTRlODI0ZjMxNGI5NDFkYjhmZWEwYjgyZjg0ZWE1MzY=
+
+curl -H "Authorization: Basic YzgxZDcxM2NlMmIzNDc0ZDhiZmFkODBjNzc3YWU1ZDU6MTRlODI0ZjMxNGI5NDFkYjhmZWEwYjgyZjg0ZWE1MzY=" -d grant_type=authorization_code -d code=AQBJTIjZDz5ZPPmW0z98tg08rXfpQj17GQZy03eRci5TpHuaoDgR0qGzlznzLleOUiayJUuLbpamSfcOo5hhxhlay4zbp8dPjlHejrJes78POWPipIxNjSXFFvgIHu2mgT_vzih23XmR3T_CXjIkwfzbomWMmBLdtos -d redirect_uri=https%3A%2F%2Finharmony.azurewebsites.net https://accounts.spotify.com/api/token
+
+
+Genius:
+ID: PtPJ6dadTTUzZ-kQTxs5EBhD4hHaA61CvXlmHmHPnYv3uk5-0-KcPf5A7fryJv_d
+Secret: HolAM9P87DOTzdBVZ0lpCZs4WUJsEmx8iIUtwkV8mV_kgE-wemA_0GAMcZ2kp7_ycOgsErQMKLPu0gaeA4ELzQ
+AccessToken: jjiVif5_LZrrd-tUnMWwKKXh36FSY5RaZvbJ1AhjX1zKpWLwOc3Q-cwJo6SotAWp
+
+https://api.genius.com/oauth/authorize?client_id=PtPJ6dadTTUzZ-kQTxs5EBhD4hHaA61CvXlmHmHPnYv3uk5-0-KcPf5A7fryJv_d&redirect_uri=https://inharmony.azurewebsites.net&response_type=code
+
+
+
+
+Passwords:
+SpotifyRevature
+GeniusRevature

@@ -1,0 +1,12 @@
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\ModelLayer\bin\Debug\net5.0\ModelLayer.deps.json
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\ModelLayer\bin\Debug\net5.0\ModelLayer.dll
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\ModelLayer\bin\Debug\net5.0\ref\ModelLayer.dll
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\ModelLayer\bin\Debug\net5.0\ModelLayer.pdb
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\ModelLayer\obj\Debug\net5.0\ModelLayer.csprojAssemblyReference.cache
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\ModelLayer\obj\Debug\net5.0\ModelLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\ModelLayer\obj\Debug\net5.0\ModelLayer.AssemblyInfoInputs.cache
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\ModelLayer\obj\Debug\net5.0\ModelLayer.AssemblyInfo.cs
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\ModelLayer\obj\Debug\net5.0\ModelLayer.csproj.CoreCompileInputs.cache
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\ModelLayer\obj\Debug\net5.0\ModelLayer.dll
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\ModelLayer\obj\Debug\net5.0\ref\ModelLayer.dll
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\ModelLayer\obj\Debug\net5.0\ModelLayer.pdb

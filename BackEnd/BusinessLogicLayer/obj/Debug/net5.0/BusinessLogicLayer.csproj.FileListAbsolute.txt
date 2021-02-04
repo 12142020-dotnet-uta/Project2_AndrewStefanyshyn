@@ -1,0 +1,17 @@
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\BusinessLogicLayer\bin\Debug\net5.0\BusinessLogicLayer.deps.json
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\BusinessLogicLayer\bin\Debug\net5.0\BusinessLogicLayer.dll
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\BusinessLogicLayer\bin\Debug\net5.0\ref\BusinessLogicLayer.dll
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\BusinessLogicLayer\bin\Debug\net5.0\BusinessLogicLayer.pdb
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\BusinessLogicLayer\bin\Debug\net5.0\ModelLayer.dll
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\BusinessLogicLayer\bin\Debug\net5.0\RepositoryLayer.dll
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\BusinessLogicLayer\bin\Debug\net5.0\ModelLayer.pdb
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\BusinessLogicLayer\bin\Debug\net5.0\RepositoryLayer.pdb
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\BusinessLogicLayer\obj\Debug\net5.0\BusinessLogicLayer.csprojAssemblyReference.cache
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\BusinessLogicLayer\obj\Debug\net5.0\BusinessLogicLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\BusinessLogicLayer\obj\Debug\net5.0\BusinessLogicLayer.AssemblyInfoInputs.cache
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\BusinessLogicLayer\obj\Debug\net5.0\BusinessLogicLayer.AssemblyInfo.cs
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\BusinessLogicLayer\obj\Debug\net5.0\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\BusinessLogicLayer\obj\Debug\net5.0\BusinessLogicLayer.csproj.CopyComplete
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\BusinessLogicLayer\obj\Debug\net5.0\BusinessLogicLayer.dll
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\BusinessLogicLayer\obj\Debug\net5.0\ref\BusinessLogicLayer.dll
+E:\Andriyko\Work\P2\P2_RepeatCommitters\BackEnd\BusinessLogicLayer\obj\Debug\net5.0\BusinessLogicLayer.pdb

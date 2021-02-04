@@ -1,0 +1,47 @@
+<div *ngIf="deletable; else elseblock">
+    <table class="table" mdbTable>
+        <thead>
+            <tr>
+                <th></th> <!-- Album image -->
+                <th>Title</th>
+                <th>Artist</th>
+                <!-- <th>Genre</th> -->
+                <th>Number of Plays</th>
+                <th></th> <!-- Delete Button -->
+            </tr>
+        </thead>
+        <tbody class="table-hover">
+            <tr mdbTableCol *ngFor="let s of songs; let o = odd; let i = index;" [ngClass]="{oddRow: o}" (click)="emitSongIndex(i)">
+                <td> <img width="80px" height="80px" src={{s.albumUrl}}/> </td>
+                <td > {{s.title}} </td>
+                <td> {{s.artistName}} </td>
+                <!-- <td> {{s.genre}} </td> -->
+                <td> {{s.numberOfPlays}} </td>
+                <td> <button class="btn btn-danger" (click)="delete(i)"> Remove </button> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #elseblock>
+    <table class="table" mdbTable>
+        <thead>
+            <tr>
+                <th></th> <!-- Album image -->
+                <th>Title</th>
+                <th>Artist</th>
+                <!-- <th>Genre</th> -->
+                <th>Number of Plays</th>
+            </tr>
+        </thead>
+        <tbody class="table-hover">
+            <tr mdbTableCol *ngFor="let s of songs; let o = odd; let i = index;" [ngClass]="{oddRow: o}" (click)="emitSongIndex(i)">
+                <td> <img width="80px" height="80px" src={{s.albumUrl}}/> </td>
+                <td > {{s.title}} </td>
+                <td> {{s.artistName}} </td>
+                <!-- <td> {{s.genre}} </td> -->
+                <td> {{s.numberOfPlays}} </td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>
